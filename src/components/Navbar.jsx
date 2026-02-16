@@ -1,6 +1,7 @@
-import React from 'react';
-
+import React,{useState} from 'react';
+import {LOGO_URL} from '../utils/constants'
 const Navbar = () => {
+  const[btnName,setBtnName] = useState("Login")
   return (
     <div>
       <nav className="bg-orange-500">
@@ -9,7 +10,7 @@ const Navbar = () => {
             <div className="flex flex-1 items-center justify-between sm:items-stretch sm:justify-start">
               <div className="flex shrink-0 items-center">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/9418/9418666.png"
+                  src={LOGO_URL}
                   alt="Your Company"
                   className="h-8 w-auto"
                 />
@@ -34,6 +35,10 @@ const Navbar = () => {
                   >
                     About Us
                   </a>
+                  <button className='text-white text-sm font-medium cursor-pointer'
+                  onClick={()=>{
+                    btnName==="Login" ? setBtnName("Logout"):setBtnName("Login")
+                  }}>{btnName}</button>
                 </div>
               </div>
             </div>
