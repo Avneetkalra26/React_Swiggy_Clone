@@ -5,7 +5,6 @@ import Navbar from './Navbar'
 const HomePage = () => {
   return (
     <div>
-       <Navbar/>
        <SendData/>
     </div>
   )

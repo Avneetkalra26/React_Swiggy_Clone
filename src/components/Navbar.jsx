@@ -1,7 +1,8 @@
-import React,{useState} from 'react';
-import {LOGO_URL} from '../utils/constants'
+import React, { useState } from 'react';
+import { LOGO_URL } from '../utils/constants'
+import { Link } from 'react-router-dom';
 const Navbar = () => {
-  const[btnName,setBtnName] = useState("Login")
+  const [btnName, setBtnName] = useState("Login")
   return (
     <div>
       <nav className="bg-orange-500">
@@ -17,28 +18,28 @@ const Navbar = () => {
               </div>
               <div className="hidden sm:block">
                 <div className="flex space-x-4">
-                  <a
-                    href="#"
+                  <Link
+                    to="/"
                     className="text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Home
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="/contact"
                     className="text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     Contact
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="/about"
                     className="text-white px-3 py-2 rounded-md text-sm font-medium"
                   >
                     About Us
-                  </a>
+                  </Link>
                   <button className='text-white text-sm font-medium cursor-pointer'
-                  onClick={()=>{
-                    btnName==="Login" ? setBtnName("Logout"):setBtnName("Login")
-                  }}>{btnName}</button>
+                    onClick={() => {
+                      btnName === "Login" ? setBtnName("Logout") : setBtnName("Login")
+                    }}>{btnName}</button>
                 </div>
               </div>
             </div>
